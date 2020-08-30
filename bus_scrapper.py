@@ -217,7 +217,7 @@ class BusScraper:
 				f.write(text)
 				f.write("\n")
 				
-			csv_to_html_table(self.filepath, "\t", encoding_in="1251", max_rows=100)
+			csv_to_html_table(self.filepath, "\t", encoding_in="1251", max_rows=600)
 			return True
 		except OSError as e:
 			print(f"Error writing file `{self.filepath}` :\n" + str(e))
@@ -288,10 +288,10 @@ def csv_to_html_table(filepath, csv_sep=",", use_cols=None, encoding_in="utf8", 
 			for row in table_data
 	)
 	
-	
+	html_title = filepath[(filepath.rfind("/")+1):(filepath.rfind("."))]
 	html = f"""
-	<head><meta charset="utf-8"></head>
-	<h2>{filepath[(filepath.rfind("/")+1):(filepath.rfind("."))]}</h2>
+	<head><meta charset="utf-8"><title>{html_title}</title></head>
+	<h2>{html_title}</h2>
 	(последние данные - вверху)
 	<table cellspacing="2" border="1" cellpadding="5" width="600">
 		{table_header}
