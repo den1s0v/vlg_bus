@@ -166,7 +166,7 @@ class BusScraper:
 			if "до ост.)" in stop:
 				# обозначение автобуса
 				bus_here = True
-				bus_distance = re.search(r"\((.+) до ост.\)", stop).group(1)
+				bus_distance = re.search(r"\((.+) до ост.\)", stop).group(1).strip()
 				continue
 			
 			if bus_here:
