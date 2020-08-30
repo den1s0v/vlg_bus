@@ -3,3 +3,4 @@
 *.tsv
 *.tcv
 __pycache__
+.*/
