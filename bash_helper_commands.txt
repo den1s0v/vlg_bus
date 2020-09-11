@@ -1,0 +1,15 @@
+# check space
+du -h -d 1
+
+# pack files
+zip dump.zip html_dump/
+# or update existing archive (not tested):
+zip -u dump.zip html_dump/
+
+# delete files
+cd html_dump
+rm *
+
+# check space
+du -h -d 1
+
