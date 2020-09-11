@@ -186,7 +186,8 @@ class BusScraper:
 
 
 		html = self.get_page(self.url)
-		self.dump_html(data["Дата"] + "_" + dump_time, html)
+        # ВКЛ / ВЫКЛ отладочное сохранение HTML-страничек
+		# self.dump_html(data["Дата"] + "_" + dump_time, html)
 		result = self.extract_time(html)
 		# update_time = result["Обновл."]
 		
